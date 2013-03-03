@@ -60,6 +60,8 @@ public class MainCalc {
 //SMELL: Redundant comment.
 		// select which one operation was selected
 //SMELL: Additional responsibility of main method to provide calculation
+		
+//SMELL: To add more operations we need to modify this code.
 		switch(op){
 		case "+":
 			System.out.println("Result: " + a + " " + op + " " + b + " = " + (a+b));
