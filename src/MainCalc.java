@@ -21,6 +21,7 @@ public class MainCalc {
 	}
 	
 	String execute(){
+		//REFACTORING: the simples solution for failing test
 		return "Result: a + b = 5.0";
 	}
 
