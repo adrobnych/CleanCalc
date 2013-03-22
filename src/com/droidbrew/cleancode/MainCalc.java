@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class MainCalc {
 	
 	public static void main(String[] args) {
+		//SMELL: mixed abstraction levels
 		Scanner scan = new Scanner(System.in);
 		Calculator calculator = new Calculator();
 		calculator.inputFirstOperand(getFirstOperand(scan));
@@ -24,6 +25,7 @@ public class MainCalc {
 	
 	private static double getSecondOperand(Scanner scan){
 		System.out.println("Enter secondOperand: ");
+		//SMELL: repetitive code
 		double secondOperand;
 		secondOperand = scan.nextDouble();
 		scan.nextLine();
