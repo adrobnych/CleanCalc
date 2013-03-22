@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class MainCalc {
 	
-	//REFACTORING: after creation of methods we forced to create instance variables for storing state between method calls
 	private double firstOperand;
 	private double secondOperand;
 	private String operation;
@@ -21,45 +20,49 @@ public class MainCalc {
 	}
 	
 	String execute(){
-		//REFACTORING: the simples solution for failing test
-		return "Result: a + b = 5.0";
+		String output = null;
+		switch(operation){
+		case "+":
+			output = "Result: " + firstOperand + " + " + secondOperand + " = " + (firstOperand+secondOperand);
+			break;
+		case "-":
+			output = "Result: " + firstOperand + " - " + secondOperand + " = " + (firstOperand-secondOperand);	
+			break;
+		case "*":
+			output = "Result: " + firstOperand + " * " + secondOperand + " = " + (firstOperand*secondOperand);
+			break;
+		case "/":
+			output = "Result: " + firstOperand + " / " + secondOperand + " = " + (firstOperand/secondOperand);
+			break;
+		}
+		return output;
+		
 	}
 
 	public static void main(String[] args) {
-		System.out.println("Hello from Calc");
 		
-		System.out.println("Enter a: ");
-		//create first operand
-		double a;
+		System.out.println("Enter first operand: ");
+		double firstOperand;
 		Scanner scan = new Scanner(System.in);
-		a = scan.nextDouble();
+		firstOperand = scan.nextDouble();
 		scan.nextLine();
 		
-		System.out.println("Enter b: ");
-		//create second operand
-		double b;
-		b = scan.nextDouble();
+		System.out.println("Enter secondOperand: ");
+		double secondOperand;
+		secondOperand = scan.nextDouble();
 		scan.nextLine();
 		
 		System.out.println("Enter operation sign: ");
-		//create operation
-		String op = scan.nextLine();
+		String operation = scan.nextLine();
 		
-		// select which one operation was selected
-		switch(op){
-		case "+":
-			System.out.println("Result: " + a + " " + op + " " + b + " = " + (a+b));
-			break;
-		case "-":
-			System.out.println("Result: " + a + " " + op + " " + b + " = " + (a-b));
-			break;	
-		case "*":
-			System.out.println("Result: " + a + " " + op + " " + b + " = " + (a*b));
-			break;	
-		case "/":
-			System.out.println("Result: " + a + " " + op + " " + b + " = " + (a/b));
-			break;	
-		}
+		MainCalc calculator = new MainCalc();
+		calculator.inputFirstOperand(firstOperand);
+		calculator.inputSecondOperand(secondOperand);
+		calculator.inputOperation(operation);
+		
+		System.out.println(calculator.execute());
+		
+		scan.close();
 		
 	}
 
