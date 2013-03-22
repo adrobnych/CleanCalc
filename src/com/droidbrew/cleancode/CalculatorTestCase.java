@@ -1,13 +1,15 @@
+package com.droidbrew.cleancode;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
 
 
 public class CalculatorTestCase {
 
 	@Test
 	public void calculatorShouldPerformPlusOperation(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(3.0);
 		calc.inputSecondOperand(2.0);
 		calc.inputOperation("+");
@@ -17,7 +19,7 @@ public class CalculatorTestCase {
 	//REFACTORING: more tests
 	@Test
 	public void testPlusWithNegatives(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(3.0);
 		calc.inputSecondOperand(-2.0);
 		calc.inputOperation("+");
@@ -25,7 +27,7 @@ public class CalculatorTestCase {
 	}
 	@Test
 	public void testMinus(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(77.0);
 		calc.inputSecondOperand(22);
 		calc.inputOperation("-");
@@ -33,7 +35,7 @@ public class CalculatorTestCase {
 	}
 	@Test
 	public void testMultiply(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(-4);
 		calc.inputSecondOperand(3.0);
 		calc.inputOperation("*");
@@ -41,7 +43,7 @@ public class CalculatorTestCase {
 	}
 	@Test
 	public void testDivision(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(100.0);
 		calc.inputSecondOperand(25.0);
 		calc.inputOperation("/");
@@ -49,7 +51,7 @@ public class CalculatorTestCase {
 	}
 	@Test
 	public void testDivisionByZero(){
-		MainCalc calc = new MainCalc();
+		Calculator calc = new Calculator();
 		calc.inputFirstOperand(100.0);
 		calc.inputSecondOperand(0);
 		calc.inputOperation("/");
