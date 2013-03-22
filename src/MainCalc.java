@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-
+//SMELL: too long class
 public class MainCalc {
 	
 	private double firstOperand;
