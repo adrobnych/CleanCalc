@@ -19,6 +19,11 @@ public class MainCalc {
 		this.operation = operation;
 	}
 	
+	//SMELL: violation of open/closed principle
+	//SMELL: repeating code with small variations; often switch hides class hierarchies
+	//SMELL: more then one responsibility for method execute
+	//SMELL: too long method
+	//note that smells often appear in clusters
 	String execute(){
 		String output = null;
 		switch(operation){
@@ -39,6 +44,8 @@ public class MainCalc {
 		
 	}
 
+	//SMELL: too long method;
+	//SMELL: more then one responsibility
 	public static void main(String[] args) {
 		
 		System.out.println("Enter first operand: ");
